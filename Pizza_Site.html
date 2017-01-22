@@ -1,0 +1,207 @@
+<!--
+Jamie W Bryant
+Pizza Menu
+January 22 , 2017
+-->
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Diarrhea Pizzeria
+		</title>
+		<link rel="stylesheet" href="./css/Pizza_CSS.css">
+		<link rel="stylesheet" href="./css/Pizza_Animations.css">
+		<script type="text/javascript" src="jquery-1.8.3.js"></script>
+		<script src="./css/PizzaJava.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	</head>
+	<body>
+	
+<!-- Navigation -->
+		<div class="wrap">
+		<div class="menu-container">
+		<ul class="menu">
+			<a href="#home" id="link"><li>Home</li></a>
+			<a href="#lemenu" id="link"><li>Le Menu</li></a>
+			<a href="#reciept" id="link"><li>Receipt</li></a>
+		</ul>
+		</div>
+		</div>
+	
+<!-- Home Page -->
+		<div id="home">
+		<div class="container">
+		<div class="text-center">
+			<span class="head-main">
+				Charlie Ninja Pizza
+			</span>
+		</div>
+		</div>
+		</div>
+
+<!-- Pizza Menu -->
+		<section id="lemenu">
+		<div class="container">
+		<div class="heading-padding">
+			<h1 class="heading-padding">
+				Pizza Menu
+			</h1>
+		<div class="order">
+			<h2>
+				<span>
+					Order Your Grievance.
+				</span>
+		<div class="ingredients">
+			<form action="" method="post" name="form1">
+	<!--Radio Buttons Size-->
+			<p id="pizza_size">Size:</br>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="size" id="Personal" value="6">Personal</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="size" id="Medium" value="10" checked="checked">Medium</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="size" id="Large" value="14">Large</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="size" id="Extra Large" value="16">Extra Large</label>
+			</p>
+
+	<!-- Check Boxes Meat-->
+			<p id="pizza_meats">Meats:</br>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="meats" id="Pepperoni" value="1" onclick="this.form.meatp.value='1.00';calculate();">Pepperoni</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="meats" id="Sausage" value="1" onclick="this.form.meatp.value='1.00';calculate();">Sausage</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="meats" id="Canadian Bacon" value="1" onclick="this.form.meatp.value='1.00';calculate();">Canadian Bacon</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="meats" id="Ground Beef" value="1" onclick="this.form.meatp.value='1.00';calculate();">Ground Beef</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="meats" id="Anchovy" value="1" onclick="this.form.meatp.value='1.00';calculate();">Anchovy</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="meats" id="Chicken" value="1" onclick="this.form.meatp.value='1.00';calculate();">Chicken</label>
+			</p>
+	
+	<!-- Radio Buttons Cheese-->
+			<p id="pizza_cheese">Cheese:</br>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="cheese" id="Regular" checked="checked" value="0" onclick="this.form.cheesep.value='0.00';calculate();">Regular</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="cheese" id="No cheese" value="0" onclick="this.form.cheesep.value='0.00';calculate();">No cheese</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="cheese" id="Extra Cheese" value="3" onclick="this.form.cheesep.value='0.00';calculate();">Extra Cheese</label>
+			</p>
+
+	<!-- Radio Buttons Crust-->
+			<p id="pizza_crust">Crust:</br>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="crust" id="Plain Crust" value="0" checked="checked" onclick="this.form.crustp.value='0.00';calculate();">Plain Crust</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="crust" id="Garlic Butter Crust" value="0" onclick="this.form.crustp.value='0.00';calculate();">Garlic Butter Crust</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="crust" id="Cheese Stuffed Crust" value="3" onclick="this.form.crustp.value='0.00';calculate();">Cheese Stuffed Crust</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="crust" id="Spicy Crust" value="0" onclick="this.form.crustp.value='0.00';calculate();">Spicy Crust</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="crust" id="House Special Crust" value="0" onclick="this.form.crustp.value='0.00';calculate();">House Special Crust</label>
+			</p>	
+
+	<!-- Radio Buttons Sauce-->
+			<p id="pizza_sauce">Sauce:</br>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="sauce" id="Marinara sauce" value="0" checked="checked">Marinara sauce</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="sauce" id="White sauce" value="0">White sauce</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="sauce" id="Barbeque sauce" value="0">Barbeque sauce</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="radio" name="sauce" id="No Sauce" value="0">No Sauce</label>
+			</p>	
+		
+	<!-- Check Boxes Veggies-->
+			<p id="pizza_veggies">Veggies:</br>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="veggies" id="Tomatoes" value="1" onclick="this.form.veggiep.value='1.00';calculate();">Tomatoes</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="veggies" id="Onions" value="1" onclick="this.form.veggiep.value='1.00';calculate();">Onions</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="veggies" id="Olives" value="1" onclick="this.form.veggiep.value='1.00';calculate();">Olives</label></br>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="veggies" id="Green Peppers" value="1" onclick="this.form.veggiep.value='1.00';calculate();">Green Peppers</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="veggies" id="Mushrooms" value="1" onclick="this.form.veggiep.value='1.00';calculate();">Mushrooms</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="veggies" id="Pineapple" value="1" onclick="this.form.veggiep.value='1.00';calculate();">Pineapple</label></br>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="veggies" id="Spinach" value="1" onclick="this.form.veggiep.value='1.00';calculate();">Spinach</label>
+				<label style="white-space:nowrap; display:inline-block">
+					<input type="checkbox" name="veggies" id="Jalapeno" value="1" onclick="this.form.veggiep.value='1.00';calculate();">Jalapeno</label>
+            </p>
+	<!--Add Together-->		
+		<div class="form-spacer">
+		<div class="submit">
+			<input type="button" value="Add" onclick="myFunction()">
+		</div>
+		</div>
+		</form>
+		</div>
+		</div>
+		</div>
+		</div>
+		</section>
+		
+<!-- Receipt Page -->
+		<section id="reciept">
+		<div class="container">
+		<div class="heading-padding">
+			<h1 class="heading-padding">
+				Receipt
+			</h1>
+		<div class="order">
+			<form action="" method="post">
+				<table id="table1" style="width:100%">  
+					<tr id="SizeOrdered">
+						<td>Size</td>
+						<th id="size1"></td>
+						<th id="size2"></td>
+					</tr>
+					<tr id="MeatOrdered">
+						<td>Meat</td>
+						<th id="meats1"></td>
+						<th id="meats2"></td>
+					</tr>
+					<tr id="CheeseOrdered">
+						<td>Cheese</td>
+						<th id="cheese1"></th>
+						<th id="cheese2"></th>
+					</tr>
+					<tr id="CrustOrdered">
+						<td>Crust</td>
+						<th id="crust1"></th>
+						<th id="crust2"></th>
+					</tr>
+					<tr id="SauceOrdered">
+						<td>Sauce</td>
+						<th id="sauce1"></th>
+						<th id="sauce2"></th>
+					</tr>
+					<tr id="VeggiesOrdered">
+						<td>Veggies</td>
+						<th id="veggies1"></th>
+						<th id="veggies2"></th>
+					</tr>
+				</table>
+	<!--Calculate Form-->
+		<div class="submit">
+			<input type="button" value="Total" onclick="myCalc()">
+		</div>
+				
+			</form>
+		</div>
+		</div>
+		</div>
+		</section>
+		
+	</body>
+</html>			
+
